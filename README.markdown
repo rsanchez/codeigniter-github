@@ -27,6 +27,20 @@ Return a list of repositories matching a search term. Optional 3rd parameter spe
 
 	$this->github_lib->search('codeigniter');
 	$this->github_lib->search('codeigniter', 'php');
+	
+Return a list of the repository info
+
+	$this->github_lib->repo_info('philsturgeon', 'codeigniter-github');
+	
+Return a list of the repository's references
+
+	$this->github_lib->repo_refs('philsturgeon', 'codeigniter-github', 'tags');
+	$this->github_lib->repo_refs('philsturgeon', 'codeigniter-github', 'branches');
+	
+Return a list of issues for a project
+
+	$this->github_lib->project_issues('philsturgeon', 'codeigniter-github', 'open');
+	$this->github_lib->project_issues('philsturgeon', 'codeigniter-github', 'closed');
 
 Extra
 -----
