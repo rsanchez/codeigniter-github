@@ -118,6 +118,25 @@ class GitHub_lib {
     	
     	return $responce->commits;
     }
+
+    /**
+     * Grab all repos by a user
+     * 
+     * @access	public
+     * @param	string - a GitHub user
+     * @return	object - an object with all the user's repos
+     */
+    public function user_repos($user = '')
+    {
+    	$responce = $this->_fetch_data('http://github.com/api/v2/json/repos/show/'.$user);
+    	
+    	if(empty($responce->repositories))
+    	{
+    		return FALSE;
+    	}
+    	
+    	return $responce->repositories;
+    }
     
     /**
      * Search GitHub
